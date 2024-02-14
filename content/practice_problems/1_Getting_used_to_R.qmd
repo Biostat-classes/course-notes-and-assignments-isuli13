@@ -216,7 +216,20 @@ Info on the dataset is viewable \@
 How many rows does the **sleep** data set have (hint: `?dim`)? What kind
 of data is stored in each variable?
 
+```{r}
+dim(sleep)
+```
+
+```{r}
+str(sleep)
+```
+
 ENTER ANSWERS HERE. ADD ANY R CHUNKS YOU USED TO FIND THE ANSWER.
+
+Sleep has 62 rows and 12 columns. The variables show the body weight,
+brain weight, total sleep, gestation, lifespan, predation, exposure, and
+danger regarding 62 different animals. The variables also show data on
+whether the animals are primates, non dreaming and dreaming states.
 
 #### 5
 
@@ -224,6 +237,21 @@ Change the column named *BodyWt* to *Body_weight*"\* in the sleep
 dataset.
 
 ADD ANY R CHUNKS YOU USED TO COMPLETE THE TASK.
+
+```{r}
+?setNames
+```
+
+```{r}
+names(sleep)[names(sleep) %in% "BodyWt"] <- "Body_weight"
+```
+
+```{r}
+
+```
+
+```         
+```
 
 #### 6
 
