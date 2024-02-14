@@ -286,7 +286,7 @@ plot(BodyWt ~ factor(Primate), data = sleep)
 NOTE YOU CAN ADD A PLOT TO THE DOCUMENT TOO! AMEND THE BELOW AS NEEDED.
 
 ```{r}
-plot(cars)
+plot(TotalSleep ~ Primate, sleep)
 ```
 
 #### 7
