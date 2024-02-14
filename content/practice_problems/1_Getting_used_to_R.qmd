@@ -139,7 +139,40 @@ INSERT AN R CHUNK HERE AND RUN EACH OF THESE COMMANDS. Add a new chunk
 by clicking the *Insert Chunk* button on the toolbar or by pressing
 *Ctrl+Alt+I*. Then state what each of these does.
 
-#### 3
+```{r}
+length(x)
+```
+
+length shows the number of items in the list.
+
+```{r}
+max(x)
+```
+
+max shows the highest integer value in the given interval.
+
+```{r}
+x[x<10]
+```
+
+x\[x\<10\] gives all the integer values that are less than 10 in the
+given interval.
+
+```{r}
+x^2
+```
+
+x\^2 gives all the integer values in the list raised to the second
+power.
+
+```{r}
+x[x < 12 & x > 7]
+```
+
+x\[x \< 12 & x \> 7\] gives all the integers that are less than 12 but
+greater than 7 in the given interval.
+
+**3**
 
 Is `-1:2` the same as `(-1):2` or `-(1:2)`? INSERT AN R CHUNK HERE AND
 RUN EACH OF THESE COMMANDS. Then state what each of these does.
