@@ -177,6 +177,26 @@ greater than 7 in the given interval.
 Is `-1:2` the same as `(-1):2` or `-(1:2)`? INSERT AN R CHUNK HERE AND
 RUN EACH OF THESE COMMANDS. Then state what each of these does.
 
+```{r}
+-1:2
+```
+
+```{r}
+(-1):2
+```
+
+```{r}
+-(1:2)
+```
+
+-1:2 gives the values between and including -1 and 2.
+
+(-1):2 runs the same command as -1:2, gives the values between and
+including -1 and 2.
+
+-(1:2) is different from the two previous commands and applies what is
+outside the parentheses to its inside.
+
 ### Data input, plotting, and tests
 
 You can read in a dataset from the internet following this protocol.
