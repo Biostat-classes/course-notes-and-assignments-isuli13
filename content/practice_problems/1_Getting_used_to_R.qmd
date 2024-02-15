@@ -343,3 +343,7 @@ Enter it into R (manually or via a .csv). (Hint: you have a piece of
 this in the code already). Check your input using the head() command.
 
 ENTER ANSWERS HERE. ADD ANY R CHUNKS YOU USED TO FIND THE ANSWER.
+
+```{r}
+example_sheet <- read.csv()
+```
