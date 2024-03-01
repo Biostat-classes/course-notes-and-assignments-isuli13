@@ -645,6 +645,9 @@ Estimates and Certainty Concepts
 
 What does a 95% confidence interval mean?
 
+A 95% confidence interval suggests there is a 95% certainty that the
+values include the true mean of the population.
+
 ### 6
 
 To make sure you understand the ideas of sampling, confidence intervals,
