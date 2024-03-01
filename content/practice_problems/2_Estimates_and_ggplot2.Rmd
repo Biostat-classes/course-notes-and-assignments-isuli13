@@ -585,6 +585,25 @@ time spent sleeping? Create a histogram to explore this issue. \* Facet
 the graph you created based on whether or not the animal is a primate
 (Primate column). \* Now only graph the data for primates.
 
+```{r}
+ggplot(sleep
+       , aes(x=TotalSleep)) +
+  geom_histogram() +
+  xlab("Brain weight (g)") +
+  ggtitle("Total sleep (hoursper day")+ggtitle("Variation in levels") +
+  theme(axis.title.x = element_text(face="bold", size=28), 
+        axis.title.y = element_text(face="bold", size=28), 
+        axis.text.y  = element_text(size=20),
+        axis.text.x  = element_text(size=20), 
+        legend.text =element_text(size=20),
+        legend.title = element_text(size=20, face="bold"),
+        plot.title = element_text(hjust = 0.5, face="bold", size=32))+
+  facet_wrap(~Taxa)
+     
+  
+  
+```
+
 ### 4
 
 Develop a properly-labeled bar graph with error bars to explore how
@@ -593,7 +612,7 @@ Primate/Non-Primate; note there are multiple ways to do this!) – use a
 95% confidence interval for the bar \* Predation risk (as a factor!) –
 use 1 standard error for the bar. Note the difference!
 
-## Estimates and Certainty Concepts
+Estimates and Certainty Concepts
 
 ### 5
 
