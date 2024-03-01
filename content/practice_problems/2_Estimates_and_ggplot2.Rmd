@@ -140,6 +140,13 @@ ggplot2, plyr, and reshape)
 ```{r}
 library(plyr)
 sleep$Taxa <- revalue(sleep$Primate, c(Y = "Primate", N = "Non-primate"))
+ggplot(sleep, aes(x=TotalSleep, y = Dreaming)) +
+  geom_point(aes(colour=Taxa), size = 4) +
+  #below here is ylabel, xlabel, and main title
+  ylab("Average hours spent dreaming daily") +
+  xlab("Average hours spent sleeping daily") +
+  ggtitle("Time spent dreaming increases with total sleeping time") +
+  #scale commands help with legends
 ```
 
 Notice what I did above. I made a new column from an existing one using
@@ -508,12 +515,68 @@ replace those with ggplot2 and do some more.
 First plot how TotalSleep is explained by BrainWt (remember the issues
 with the data). Use ggplot2 to plot the relationship.
 
+```{r}
+library(plyr)
+ggplot(sleep[sleep$BrainWt <1000, ], aes(x=BrainWt, y = TotalSleep)) +
+  geom_point(size = 4) +
+  #below here is ylabel, xlabel, and main title
+  ylab("Average hours spent \n sleeping daily") +
+  xlab("Brain weight (g)") +
+  ggtitle("Time spent sleeping \n decreases with brain \n 
+weight") +
+  #theme sets sizez, text, etc
+  theme(axis.title.x = element_text(face="bold", size=28), 
+        axis.title.y = element_text(face="bold", size=28), 
+        axis.text.y  = element_text(size=20),
+        axis.text.x  = element_text(size=20), 
+        legend.text =element_text(size=20),
+        legend.title = element_text(size=20, face="bold"),
+        plot.title = element_text(hjust = 0.5, face="bold", size=32),
+         panel.background = element_rect(fill="white"),
+        panel.grid.minor.y = element_line(size=3),
+        panel.grid.major = element_line(colour = "black"),
+        plot.background = element_rect(fill="gray"),
+        legend.background = element_rect(fill="gray"))
+  
+  
+```
+
 ### 2
 
 Next color code each plot point by whether or not its a primate. In
 order to do this you can use the Primate column or (following class
 code) make a new column called Taxa to represent the information
 (hint:search for “ revalue”). Make sure axes are well-labeled.
+
+```{r}
+library(plyr)
+sleep$Taxa <- revalue(sleep$Primate, c(Y = "Primate" , N = "Non-primate"))
+sleep$Taxa <- relevel(sleep$Taxa, "Primate")
+
+ggplot(sleep[sleep$BrainWt <1000, ], aes(x=BrainWt, y = TotalSleep)) +
+   geom_point(aes (colour="Taxa"), size = 4) +
+  #below here is ylabel, xlabel, and main title
+  ylab("Average hours spent \n sleeping daily") +
+  xlab("Brain weight (g)") +
+  ggtitle("Time spent sleeping \n decreases with brain \n 
+weight") +
+  scale_color_manual(name="Type of mammal", values = c("#EEA373", "#50486D"))
+  
+   theme(axis.title.x = element_text(face="bold", size=28), 
+        axis.title.y = element_text(face="bold", size=28), 
+        axis.text.y  = element_text(size=20),
+        axis.text.x  = element_text(size=20), 
+        legend.text =element_text(size=20),
+        legend.title = element_text(size=20, face="bold"),
+        plot.title = element_text(hjust = 0.5, face="bold", size=32),
+         panel.background = element_rect(fill="white"),
+        panel.grid.minor.y = element_line(size=3),
+        panel.grid.major = element_line(colour = "black"),
+        plot.background = element_rect(fill="gray"),
+        legend.background = element_rect(fill="gray"))
+  
+  
+```
 
 ### 3
 
@@ -568,10 +631,9 @@ You can also do this from the web (included here). When you knit the
 file, output will appear in your final file. However, its nice to know
 what **Source** does in general.
 
-```{r}
 library(VGAM)
 source("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/code_examples/central_limit_theorem.R")
-```
+\`\`\`
 
 This script follows the UBC tutorial to show you how well the CLT
 (central limit theorem) works (and how it functions). This will be
