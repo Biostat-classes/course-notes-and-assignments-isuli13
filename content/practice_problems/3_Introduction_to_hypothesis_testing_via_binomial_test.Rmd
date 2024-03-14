@@ -135,4 +135,8 @@ questions has 4 answer choices. For the last test, the dog picked 33
 questions correctly. How likely is this to happen, and is there evidence
 the students helped the dog?
 
+```{r}
+binom.test(33,100, alternative = "greater", p=.25)
+```
+
 **MAKE SURE TO THINK ABOUT YOUR TEST OPTIONS**
