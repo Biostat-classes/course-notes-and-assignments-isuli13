@@ -254,7 +254,18 @@ Is travelling independent of time of day? You’ll need to consider
 traveling vs not traveling due to different number of groups observed in
 each period. Carry out post-hoc tests if needed.
 
-### Smoking
+```{r}
+dolphin
+travel_table <- as.table(matrix(c(6, 28+ 38, 6, 9, 14, 9, 13, 66), nrow = 4, byrow = T))
+colnames(travel_table) = c("travel", "not_travel")
+rownames(travel_table) = c("morning", "noon", "afternoon", "night")
+travel_table
+chisq.test(travel_table)
+chisq.test(travel_table)$expected
+fisher.test(travel_table)
+library(rcompanion)
+pairwiseNominalIndependence(travel_table, compare = "row", method = "holm")
+```
 
 #### 5
 
