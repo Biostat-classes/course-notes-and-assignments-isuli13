@@ -222,6 +222,15 @@ hypothesis is rejected.
 For people that have a heart attack before they turn 30, is survival
 independent of gender?
 
+```{r}
+chisq.test(table(heart_attacks[heart_attacks$AGE <30, "SEX"], heart_attacks[heart_attacks$AGE <30, "DIED"]))
+chisq.test(table(heart_attacks[heart_attacks$AGE <30, "SEX"], heart_attacks[heart_attacks$AGE <30, "DIED"]))$expected
+fisher.test(table(heart_attacks[heart_attacks$AGE <30, "SEX"], heart_attacks[heart_attacks$AGE <30, "DIED"]))
+```
+
+The p-value of 1, larger than .05, suggests the null hypothesis cannot
+be rejected.
+
 ### Dolphins
 
 #### 4
