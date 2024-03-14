@@ -275,3 +275,9 @@ http://www.r-tutor.com/elementary-statistics/goodness-fit/chi-squared-test-indep
 
 to determine if smoking is independent of exercise. You’ll need to input
 data manually. Carry out post-hoc tests if needed.
+
+```{r}
+smoke <- chisq.test(matrix(c(7, 1, 3, 87, 18, 84, 12, 3, 4, 9, 1, 7), nrow = 4, byrow = T))
+smoke$expected
+fisher.test(matrix(c(7, 1, 3, 87, 18, 84, 12, 3, 4, 9, 1, 7), nrow = 4, byrow = T))
+```
