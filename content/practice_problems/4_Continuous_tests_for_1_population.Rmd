@@ -213,6 +213,23 @@ g. Test the hypothesis that µ = 205 \* Assuming variance = 1500 \*
 Estimating the variance from the data \* Using rank transform analysis
 \* Using binary transform analysis
 
+```{r}
+strawberries <- c(239,176,235,217,234,216,318,190,181,225)
+z.test(x=strawberries, mu=205, sigma.x = sqrt(1500))
+```
+
+```{r}
+t.test(x=strawberries, mu=205)
+```
+
+```{r}
+wilcox.test(x=strawberries, mu = 205)
+```
+
+```{r}
+SIGN.test(x=strawberries, mu = 205)
+```
+
 #### 5
 
 Evolutionary geneticists predicts the family sex ratio will be 80%
