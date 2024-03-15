@@ -138,6 +138,10 @@ happens. When you source a script, it is run in R without showing any
 console output (but graphs and objects are still produced!). Try
 *source("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/code_examples/qqplot_example.R")*
 
+```{r}
+source("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/code_examples/qqplot_example.R")
+```
+
 #### 2
 
 Review the central_limit_theorem.R code (remember
@@ -187,6 +191,18 @@ z.test(x=flies, mu = 161, sigma.x=sqrt(275))
 
 ```{r}
 t.test(x=flies,mu = 161)
+```
+
+```{r}
+wilcox.test(flies, mu=161)
+```
+
+```{r}
+SIGN.test(x=flies,md = 161)
+```
+
+```{r}
+flies <- c(183.2, 149.0, 154.0, 167.2, 187.2, 158.0, 143.0)
 ```
 
 #### 4
