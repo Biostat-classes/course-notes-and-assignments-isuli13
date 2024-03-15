@@ -274,3 +274,8 @@ techniques. Data at
 sport <- read.table("http://www.statsci.org/data/oz/ais.txt", header = T, 
                     stringsAsFactors = T)
 ```
+
+```{r}
+library(MKinfer)
+boot.t.test(sport[sport$Sex == "male", "Wt"], mu= 85.9)
+```
